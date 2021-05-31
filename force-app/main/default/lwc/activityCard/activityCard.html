@@ -1,0 +1,15 @@
+<template>
+  <lightning-card variant="Narrow" title={name} class="bear-tile">
+    <div slot="actions">
+      <c-modal activity={activity} onupdateactivity={handleUpdateActivity}></c-modal>
+    </div>
+    <p class="slds-p-horizontal_small"><lightning-badge label={status}></lightning-badge></p>
+    <div class="slds-var-p-horizontal_small bear-tile-body">
+      <div class="slds-card">
+      
+       <p>Estimated time: {estimatedTime}</p>
+       <p>Realized time: {realizedTime}</p>
+      </div>
+    </div>
+  </lightning-card>
+</template>

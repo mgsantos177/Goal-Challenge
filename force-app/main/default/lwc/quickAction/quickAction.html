@@ -1,0 +1,11 @@
+<template>
+<template if:true={activities.data}>
+  <lightning-layout multiple-rows="true">
+    <template for:each={activities.data} for:item="activity">
+      <lightning-layout-item key={activity.Id} size="12" class="slds-var-p-around_x-small">
+        <c-new-activity-card activity={activity} onupdatelist={handleUpdateList}></c-new-activity-card>
+      </lightning-layout-item>
+    </template>
+  </lightning-layout>
+</template>
+</template>

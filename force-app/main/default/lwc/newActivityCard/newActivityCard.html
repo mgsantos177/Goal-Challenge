@@ -1,0 +1,14 @@
+<template>
+    <lightning-card variant="Narrow" title={name} class="bear-tile">
+        <div class="slds-p-horizontal_medium">
+        <lightning-record-form
+        record-id={activity.Id}
+        object-api-name="Activity__c"
+        columns="2"
+        fields={fields}
+        mode="view"
+        onsubmit={handleSubmit}>
+      </lightning-record-form>
+    </div>
+  </lightning-card>
+</template>

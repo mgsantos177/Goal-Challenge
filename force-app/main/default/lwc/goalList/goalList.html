@@ -1,0 +1,37 @@
+<template>
+	<lightning-card title="Goals" icon-name="utility:animal_and_nature">
+		<div class="slds-card__body_inner">
+			<!-- Start bear list -->
+			<template if:true={goals}>
+				<lightning-layout multiple-rows="true" pull-to-boundary="small">
+					<template for:each={goals} for:item="goal">
+						<lightning-layout-item key={goal.Id} size="6" class="slds-var-p-around_x-small">
+							<div slot="actions">
+								<c-modal></c-modal>
+							</div>
+							<!-- Start bear tile -->
+							<lightning-card title={goal.Name} class="bear-tile">
+								<div class="slds-var-p-horizontal_small bear-tile-body">
+									<div class="slds-media">
+										<div class="slds-media__body">
+											<p class="slds-var-m-bottom_xx-small">{goal.Start_Date__c}</p>
+											<p class="slds-var-m-bottom_xx-small">{goal.End_date__c} cm</p>
+										</div>
+									</div>
+								</div>
+							</lightning-card>
+							<!-- End bear tile -->
+						</lightning-layout-item>
+					</template>
+				</lightning-layout>
+			</template>
+			<!-- End bear list -->
+			<!-- Data failed to load -->
+			<template if:true={error}>
+				<div class="slds-text-color_error">
+					An error occurred while loading the goal list
+				</div>
+			</template>
+		</div>
+	</lightning-card>
+</template>
